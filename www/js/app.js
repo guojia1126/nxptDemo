@@ -39,6 +39,42 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.nssb', {
+      url: "/nssb",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/nssb.html"
+        }
+      }
+    })
+
+    .state('app.tysbb', {
+      url: "/nssb/tysbb",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/nssb/tysbb.html"
+        }
+      }
+    })
+
+    .state('app.skjn', {
+      url: "/skjn",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/skjn.html"
+        }
+      }
+    })
+
+    .state('app.nsrxx', {
+      url: "/nsrxx",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/nsrxx.html"
+        }
+      }
+    })
+
     .state('app.browse', {
       url: "/browse",
       views: {
@@ -67,6 +103,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/nssb');
 });
 

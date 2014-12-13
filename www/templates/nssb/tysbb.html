@@ -1,0 +1,45 @@
+<ion-view title="通用申报表">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-log-out"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <form>
+      <div class="list card">
+        <ion-item>
+          征收项目<span class="item-note">营业税</span>
+        </ion-item>
+        <ion-item>
+          征收品目<span class="item-note">信息服务</span>
+        </ion-item>
+        <label class="item item-input">
+          <span class="input-label">计税依据</span>
+          <input type="text" placeholder="请输入">
+        </label>
+        <ion-item>
+          税率<span class="item-note">0.12</span>
+        </ion-item>
+        <ion-item>
+          应纳税额<span class="item-note">456.21</span>
+        </ion-item>
+
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item">
+            <i class="icon ion-ios7-reload"></i>
+            重置
+          </a>
+          <a class="tab-item">
+            <i class="icon ion-ios7-calculator"></i>
+            计税
+          </a>
+          <a class="tab-item" disabled>
+            <i class="icon ion-share"></i>
+            提交
+          </a>
+        </div>
+      </div>
+    </form>
+
+
+  </ion-content>
+</ion-view>
