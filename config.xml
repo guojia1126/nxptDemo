@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="cn.nxcc.nxpxdemo" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>手机报税demo</name>
+    <description>
+        手机报税demo
+    </description>
+    <author email="176566340@qq.com" href="http://ionicframework.com/">
+        Guo Jiaming
+    </author>
+    <content src="index.html"/>
+    <access origin="*"/>
+    <preference name="webviewbounce" value="false"/>
+    <preference name="UIWebViewBounce" value="false"/>
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="BackupWebStorage" value="none"/>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true"/>
+    </feature>
+</widget>
