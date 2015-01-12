@@ -51,5 +51,74 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('PlaylistCtrl', function ($scope, $stateParams) {
-  });
+  .controller('PlaylistCtrl', function ($scope, $ionicActionSheet) {
+    //alert(angular.element("ion-slide-box"));
+    //alert(angular.element(document.querySelector("#aaa")).append("<h1>adfsdf</h1>"))
+    ionic.DomUtil.ready(function(){
+    })
+
+    $scope.openPopover = function() {
+      // Show the action sheet
+      var hideSheet = $ionicActionSheet.show({
+        buttons: [
+          { text: '<b>Share</b> This' },
+          { text: 'Move' }
+        ],
+        destructiveText: 'Delete',
+        titleText: 'Modify your album',
+        cancelText: 'Cancel',
+        cancel: function() {
+          // add cancel code..
+        },
+        buttonClicked: function(index) {
+          alert(index)
+          return true;
+        },
+        destructiveButtonClicked: function(){
+          alert("删除啦")
+        }
+      });
+
+      // For example's sake, hide the sheet after two seconds
+      //$timeout(function() {
+      //  hideSheet();
+      //}, 6000);
+    };
+  })
+
+  .controller('BrowseCtrl', function ($scope,$cordovaCamera) {
+    $scope.imgsrc = "img/delorean.jpg";
+    var options = {
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      encodingType: Camera.EncodingType.JPEG,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false
+    };
+
+    $scope.getPicture = function(){
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+        $scope.imgsrc = "data:image/jpeg;base64," + imageData;
+      }, function(err) {
+        // error
+      });
+    }
+  })
+
+  .controller('SearchCtrl', function ($scope,$cordovaBarcodeScanner) {
+
+    $scope.scan = function(){
+      $cordovaBarcodeScanner
+        .scan()
+        .then(function(barcodeData) {
+          alert(JSON.stringify(barcodeData));
+        }, function(error) {
+          // An error occurred
+        });
+    }
+
+  })
+
+
+;

@@ -1,5 +1,27 @@
 <ion-view title="Playlist">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-qr-scanner" ng-click="openPopover()"></button>
+  </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>项目</h1>
+    <ion-slide-box id="aaa" on-slide-changed="slideHasChanged($index)" ng-show="true">
+      <ion-slide>
+        <div class="box blue">
+          <h1>BLUE</h1>
+          <img class="full-image" ng-src="img/delorean.jpg">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow">
+          <h1>YELLOW</h1>
+          <img class="full-image" ng-src="img/ionic.png">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box pink">
+          <h1>PINK</h1>
+          <img class="full-image" ng-src="img/delorean.jpg">
+        </div>
+      </ion-slide>
+    </ion-slide-box>
   </ion-content>
 </ion-view>
